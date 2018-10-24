@@ -10,6 +10,8 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.set('view engine', 'html');
+
 //MONGO STUFF
 const MongoStore = require('connect-mongo');
 var mongoose = require('mongoose');
