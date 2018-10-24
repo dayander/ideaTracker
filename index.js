@@ -83,10 +83,10 @@ app.get('/projects', function(req, res){
 
 
 //ERROR HANDELING//
-
-app.use(function (req,res) { //1
-    res.render('404', {url:req.url}); //2
-});
+//
+// app.use(function (req,res) { //1
+//     res.render('404', {url:req.url}); //2
+// });
 
 
 http.createServer(app).listen(app.get('port'), function(){
