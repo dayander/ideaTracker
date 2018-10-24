@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "nodemon --exec node index.js",
-    "run": "node apiServer.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
