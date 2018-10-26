@@ -2,7 +2,11 @@ var mongoose = require('mongoose');
 
 
 var ideaSchema = mongoose.Schema({
-    idea: String,
+    quickTitle: String,
+    description: String,
+    ideaURL: String,
+    priority: String,
+
 
 
 

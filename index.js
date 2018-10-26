@@ -40,7 +40,7 @@ db.on('error', console.error.bind(console, '# MongoDB connection error:'));
 
 var Ideas = require('./models/idea.js');
 
-
+//all ideas
 app.get('/ideas', function (req, res) {
     Ideas.find(function (err, ideas) {
         if(err){
@@ -51,6 +51,23 @@ app.get('/ideas', function (req, res) {
         res.json(ideas)
 
     })
+});
+
+//single Idea
+app.get('/ideas/:objId', function (req, res) {
+    let path = req.path;
+    path = path.slice(7);
+
+    Ideas.findOne(({_id: path}), function (err, idea) {
+        if(err){
+            throw err;
+        }
+
+        console.log(idea);
+
+        res.json(idea);
+    })
+
 })
 
 
