@@ -68,7 +68,22 @@ app.get('/ideas/:objId', function (req, res) {
         res.json(idea);
     })
 
-})
+});
+
+//post idea
+
+app.post('/ideas/:objectId', function(req, res){
+
+    var idea = req.body;
+    console.log(idea);
+    Ideas.create(idea, function(err, post){
+        if(err){
+            throw err;
+        }
+        res.json(idea);
+    })
+
+});
 
 
 
