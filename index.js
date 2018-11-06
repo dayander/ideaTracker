@@ -85,6 +85,49 @@ app.post('/ideas/:quickTitle', function(req, res){
 
 });
 
+//update idea
+
+app.put('/ideas/:objectId', function (req, res) {
+
+   var idea = req.body;
+   var ideaToUpdateId = idea._id;
+
+    let path = req.path;
+    path = path.slice(7);
+
+
+
+   Ideas.findOneAndUpdate({_id: path}, idea, function (err, result) {
+        res.send(
+            (err === null) ? {msg: result} : {msg: err}
+        );
+        
+    })
+
+});
+
+//delete idea
+
+app.delete('/ideas/:objectId', function (req, res) {
+
+    var idea = req.body;
+    var ideaToUpdateId = idea._id;
+
+    let path = req.path;
+    path = path.slice(7);
+
+
+
+    Ideas.findOneAndDelete({_id: path}, idea, function (err, result) {
+        res.send(
+            (err === null) ? {msg: result} : {msg: err}
+        );
+
+    })
+
+
+});
+
 
 
 //PROJECT TEST
