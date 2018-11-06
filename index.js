@@ -72,11 +72,11 @@ app.get('/ideas/:objId', function (req, res) {
 
 //post idea
 
-app.post('/ideas/:objectId', function(req, res){
+app.post('/ideas/:quickTitle', function(req, res){
 
     var idea = req.body;
     console.log(idea);
-    Ideas.create(idea, function(err, post){
+    Ideas.create(idea, function(err, idea){
         if(err){
             throw err;
         }
