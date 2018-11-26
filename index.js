@@ -72,7 +72,9 @@ app.get('/ideas/:objId', function (req, res) {
 
 //post idea
 
-app.post('/ideas/:quickTitle', function(req, res){
+app.post('/ideas', function(req, res){
+
+    console.log("Hi fucker");
 
     var idea = req.body;
     console.log(idea);
